@@ -2,9 +2,9 @@
   <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
     <div class="container">
       <div class="nav-title">
-        <a class="navbar-brand" [routerLink]="['/']">Growth</a>
-        <img class="navbar-logo" [routerLink]="['/']"
-          src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Darwin_Technologies_Ltd_logo.png" alt="">
+        <a class="navbar-brand" [routerLink]="['/home']">Growth</a>
+        <img class="navbar-logo" [routerLink]="['/home']"
+          src="https://i0.wp.com/globalbusiness-magazine.de/wp-content/uploads/2020/02/Qubiz_logo_2019_Color_crop.png?fit=1830%2C580&ssl=1" alt="" style="height: 20px;">
       </div>
 
       <input id="darkMode" type="checkbox" [checked]="darkMode$ | async" (change)="toggleTheme()" class="toggle" />
@@ -13,18 +13,21 @@
         <mat-icon class="sun">sunny</mat-icon>
       </label>
 
+      <button mat-raised-button class="btn-primary btn-back" (click)="goBack()" matTooltip="Back"
+              matTooltipPosition="below" *ngIf="router.url != '/home'">
+        <mat-icon>keyboard_backspace</mat-icon>
+      </button>
+
       <button mat-raised-button class="navbar-toggler btn-primary btn-toggler" [ngClass]="{ show: isExpanded }"
         (click)="toggle()">
-        <!-- [matMenuTriggerFor]="burgerMenu" -->
         <mat-icon>reorder</mat-icon>
       </button>
 
       <div class="navbar-collapse collapse" [ngClass]="{ show: isExpanded }">
-        <!-- <mat-menu #burgerMenu="matMenu"> -->
         <ul class="navbar-nav flex-grow">
           <li class="nav-item" mat-menu-item>
             <button [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }" matTooltip="Home"
-              matTooltipPosition="below" mat-raised-button class="btn-primary" [routerLink]="['/']"
+              matTooltipPosition="below" mat-raised-button class="btn-primary" [routerLink]="['/home']"
               (click)="$event.stopPropagation()">
               <mat-icon style="margin: auto; color: black;">home</mat-icon>
             </button>
@@ -110,7 +113,7 @@
                 (click)="$event.stopPropagation()">
                 <button mat-raised-button class="btn-primary" [routerLink]="['/dep-inj-angular']">DI with Angular</button>
               </li>
-              <p style="margin: 0">*Same links</p>
+              <p style="margin: 0">*Same link</p>
             </mat-menu>
             <li class="nav-item nav-nested-item others-list-item" [routerLinkActive]="['link-active']" mat-menu-item
               (click)="$event.stopPropagation()">
@@ -531,7 +534,6 @@
             </mat-menu>
           </mat-menu>
         </ul>
-        <!-- </mat-menu> -->
       </div>
     </div>
   </nav>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DarkModeService } from 'angular-dark-mode';
+import { Location } from '@angular/common'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-menu',
@@ -10,7 +12,9 @@ export class NavMenuComponent implements OnInit {
   darkMode$ = this.darkModeService.darkMode$;
   isExpanded = false;
 
-  constructor(private darkModeService: DarkModeService) {}
+  constructor(private darkModeService: DarkModeService,
+    private location: Location,
+    public router: Router) {}
 
   ngOnInit() {
     console.log('');
@@ -26,5 +30,9 @@ export class NavMenuComponent implements OnInit {
 
   toggleTheme(): void {
     this.darkModeService.toggle();
+  }
+
+  goBack() {
+    this.location.back()
   }
 }

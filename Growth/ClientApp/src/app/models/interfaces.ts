@@ -31,10 +31,15 @@ export interface ForExample {
 
 export interface Growth {
   chapter: string,
-  lessons: string[]
+  lessons: Lesson[]
 }
 
 export interface Phase {
   phaseName: string,
   growthArray: Growth[]
+}
+
+export interface Lesson {
+  name: string,
+  link: string
 }

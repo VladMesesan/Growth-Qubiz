@@ -1,7 +1,7 @@
-// header {
-//   position: fixed;
-//   width: 100%;
-// }
+$dark-mode: #1F2125;
+$light-mode: #f6f7f9;
+$primary-color: #269FEE;
+$secondary-color: #EA6228;
 
 .nav-title {
   display: flex;
@@ -15,12 +15,17 @@ li button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  transition: 1s;
 }
 
 
 .navbar-logo,
 .navbar-brand {
   margin: 0 auto 0 auto;
+}
+
+.navbar-logo {
+  height: 20px;
 }
 
 .navbar-logo {
@@ -31,12 +36,6 @@ li button {
   display: flex;
   justify-content: flex-end;
 }
-
-// .btn-toggler {
-//   min-width: 30px;
-//   width: 50px;
-//   padding: 0;
-// }
 
 .navbar-collapse:not(.show) {
   display: none;
@@ -95,9 +94,11 @@ html {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
-.link-active .btn-primary {
-  background-color: #DB0962;
-  border: 1px solid;
+.link-active .btn-primary,
+.link-active.btn-primary {
+  transition: 0.5s;
+  background-color: $primary-color;
+  border: 1px solid $secondary-color;
   color: white;
 }
 
@@ -111,8 +112,8 @@ html {
 
 .navbar-brand:hover,
 .nav-title:hover>a {
-  color: #DB0962;
   transition: 0.3s;
+  color: $primary-color;
 }
 
 ul li,
@@ -146,18 +147,25 @@ ul li,
   user-select: none;
 }
 
+.sun:hover,
+.moon:hover {
+  transition: 0.3s;
+  color: $secondary-color;
+  // background: -webkit-linear-gradient($primary-color 20%, $secondary-color);
+  // background-clip: text;
+  // -webkit-text-fill-color: transparent;
+}
+
 .sun {
+  transition: 0.3s;
+  color: #1F2125;
   top: 0;
 }
 
 .moon {
-  top: -150%;
-}
-
-.sun:hover,
-.moon:hover {
-  color: #DB0962;
   transition: 0.3s;
+  color: #f6f7f9;
+  top: -150%;
 }
 
 .toggle:checked+.toggle-label .sun {

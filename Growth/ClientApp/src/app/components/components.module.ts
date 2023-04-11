@@ -35,7 +35,7 @@ import { DependencyInjectionComponent } from './dependency-injection/dependency-
     BrowserAnimationsModule,
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
       { path: 'value-and-reference', component: ValueAndReferenceTypesComponent },
       { path: 'passing-params', component: PassingParamsComponent },
       { path: 'box-and-unbox', component: BoxAndUnboxComponent },
