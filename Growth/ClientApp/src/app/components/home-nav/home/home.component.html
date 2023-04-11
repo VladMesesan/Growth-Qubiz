@@ -7,9 +7,9 @@
   <div class="lists-container">
     <ol class="item-list" *ngFor="let phase of phaseData">
       <p class="chapter-title">{{phase.phaseName}}</p>
-      <li class="chapter" *ngFor="let growth of phase.growthArray">{{growth.chapter}}
+      <li class="chapter" *ngFor="let growth of phase.growthArray"><span>{{growth.chapter}}</span>
         <ul class="item-sublist" *ngFor="let lesson of growth.lessons; let i = index">
-          <li>{{lesson}}</li>
+          <li><p [routerLink]=lesson.link class="lesson">{{lesson.name}}</p></li>
         </ul>
       </li>
     </ol>

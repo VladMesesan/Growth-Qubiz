@@ -1,8 +1,32 @@
+.lesson {
+  margin: 0;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.lesson:hover {
+  color: #269FEE;
+  text-decoration: dashed;
+}
+
+.lesson:hover:after {
+  content: " <";
+}
+
+// .lesson:hover:before {
+//   content: ">";
+// }
+
+.chapter span {
+  width: fit-content;
+  cursor: not-allowed;
+}
+
 .home-title {
   text-align: center;
 }
 
-.item-list > .chapter {
+.item-list>.chapter {
   font-size: 125%;
   font-weight: 700;
 

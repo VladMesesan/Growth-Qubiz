@@ -15,51 +15,51 @@ export class HomeComponent implements OnInit {
       growthArray: [
         {
           chapter: 'C#',
-          lessons: ['Passing parameters', 'Value type', 'Reference type', 'Boxing & Unboxing', 'LINQ']
+          lessons: [{ name: 'Passing parameters', link: '/passing-params' }, { name: 'Value type', link: '/value-and-reference' }, { name: 'Reference type', link: '/value-and-reference' }, { name: 'Boxing & Unboxing', link: '/box-and-unbox' }, { name: 'LINQ', link: '/linq-link' }]
         },
         {
           chapter: 'OOP',
-          lessons: ['Class vs Object', 'SOLID', 'Abstraction', 'Inheritance', 'Encapsulation', 'Polymorphism']
+          lessons: [{ name: 'Class vs Object', link: '/class-vs-object' }, { name: 'SOLID', link: '/solid-link' }, { name: 'Abstraction', link: '/oop-principles' }, { name: 'Inheritance', link: '/oop-principles' }, { name: 'Encapsulation', link: '/oop-principles' }, { name: 'Polymorphism', link: '/oop-principles' }]
         },
         {
           chapter: 'Dependency Injection',
-          lessons: ['Inversion of control', 'IoC Container', 'DI with C#', 'DI with Angular']
+          lessons: [{ name: 'Inversion of control', link: '/home' }, { name: 'IoC Container', link: '/home' }, { name: 'DI with C#', link: '/home' }, { name: 'DI with Angular', link: '/dep-inj-angular' }]
         },
         {
           chapter: 'Angular',
-          lessons: ['Modules', 'Components', 'Data-Binding', 'Services', 'Communication/Interaction between all of the above', 'Reactive forms', 'Angular Lifecycle hooks', 'Observables - RxJs', 'Unit-Tests']
+          lessons: [{ name: 'Modules', link: '/home' }, { name: 'Components', link: '/home' }, { name: 'Data-Binding', link: '/home' }, { name: 'Services', link: '/home' }, { name: 'Communication/Interaction between all of the above', link: '/home' }, { name: 'Reactive forms', link: '/home' }, { name: 'Angular Lifecycle hooks', link: '/home' }, { name: 'Observables - RxJs', link: '/home' }, { name: 'Unit-Tests', link: '/home' }]
         },
         {
           chapter: 'SQL',
-          lessons: ['At least one course on SQL', 'Between 15-20 scripts on the Darwin databases']
+          lessons: [{ name: 'At least one course on SQL', link: '/home' }, { name: 'Between 15-20 scripts on the Darwin databases', link: '/home' }]
         },
         {
           chapter: 'Mongo DB',
-          lessons: ['At least one course on Mongo', 'Between 15-20 scripts on the Darwin databases']
+          lessons: [{ name: 'At least one course on Mongo', link: '/home' }, { name: 'Between 15-20 scripts on the Darwin databases', link: '/home' }]
         },
         {
           chapter: 'Clean Code',
-          lessons: ['Project coding standards', 'DRY/KISS/YAGNI Principles', 'Refactoring']
+          lessons: [{ name: 'Project coding standards', link: '/home'}, {name:'DRY/KISS/YAGNI Principles', link: '/home'}, {name:'Refactoring', link: '/home'}]
         },
         {
           chapter: 'Debugging',
-          lessons: ['Event Viewer', 'Client Errors', 'Call Stack', 'Try/Catch', 'Conditional breakpoints', 'Getter/Setter breakpoints']
+          lessons: [{ name: 'Event Viewer', link: '/home'}, {name:'Client Errors', link: '/home'}, {name:'Call Stack', link: '/home'}, {name:'Try/Catch', link: '/home'}, {name:'Conditional breakpoints', link: '/home'}, {name:'Getter/Setter breakpoints', link: '/home'}]
         },
         {
           chapter: 'Coding for success',
-          lessons: ['Readbility', 'Testability']
+          lessons: [{name:'Readbility', link: '/home'}, {name:'Testability', link: '/home'}]
         },
         {
           chapter: 'Test Driven Development',
-          lessons: ['Unit Tests', 'Integration Tests']
+          lessons: [{name:'Unit Tests', link: '/home'}, {name:'Integration Tests', link: '/home'}]
         },
         {
           chapter: 'Project related items',
-          lessons: ['No more than one change per item/area during code review', 'Future work should not contain issues already identified in previous code reviews', 'All stories have estimates and we stick to them in optimal conditions (when nothing changes from business, UX)', 'Understand project architecture and be able to explain it', 'No P1 and P2 bugs']
+          lessons: [{name:'No more than one change per item/area during code review', link: '/home'}, {name:'Future work should not contain issues already identified in previous code reviews', link: '/home'}, {name:'All stories have estimates and we stick to them in optimal conditions (when nothing changes from business, UX)', link: '/home'}, {name:'Understand project architecture and be able to explain it', link: '/home'}, {name:'No P1 and P2 bugs', link: '/home'}]
         },
         {
           chapter: 'Owner of your work',
-          lessons: ['Involve appropriate stakeholders in each epic', 'Start to end development cycle of the story', 'Coordinate the investigation of the story/epic', 'Communication with the stakeholders should be clear and addapted to their technical skills', 'Constructive attitude towards feedback', 'Proactivity, challenge requirements with strong arguments and try to explain them in a positive way', 'Code complete']
+          lessons: [{name:'Involve appropriate stakeholders in each epic', link: '/home'}, {name:'Start to end development cycle of the story', link: '/home'}, {name:'Coordinate the investigation of the story/epic', link: '/home'}, {name:'Communication with the stakeholders should be clear and addapted to their technical skills', link: '/home'}, {name:'Constructive attitude towards feedback', link: '/home'}, {name:'Proactivity, challenge requirements with strong arguments and try to explain them in a positive way', link: '/home'}, {name:'Code complete', link: '/home'}]
         }
       ]
     },
@@ -68,7 +68,7 @@ export class HomeComponent implements OnInit {
       growthArray: [
         {
           chapter: 'In depth architecture understanding',
-          lessons: ['Understand what SOA is and how services interact', 'Principles of SOA', 'SOA Patterns', 'Implementation approches', 'The iDesign Method', 'Build a small application that adheres to the SOA standards ', 'The above application should also be documented with high level SOA diagrams']
+          lessons: [{name:'Understand what SOA is and how services interact', link: '/home'}, {name:'Principles of SOA', link: '/home'}, {name:'SOA Patterns', link: '/home'}, {name:'Implementation approches', link: '/home'}, {name:'The iDesign Method', link: '/home'}, {name:'Build a small application that adheres to the SOA standards ', link: '/home'}, {name:'The above application should also be documented with high level SOA diagrams', link: '/home'}]
         },
       ]
     },
@@ -77,11 +77,11 @@ export class HomeComponent implements OnInit {
       growthArray: [
         {
           chapter: 'Performance testing and Profiling',
-          lessons: ['Visual Studio Web and Load testing', 'Visual Studio Performace Profiler', 'SQL Server Profiler', 'Using available tools to detect performance issues']
+          lessons: [{name:'Visual Studio Web and Load testing', link: '/home'}, {name:'Visual Studio Performace Profiler', link: '/home'}, {name:'SQL Server Profiler', link: '/home'}, {name:'Using available tools to detect performance issues', link: '/home'}]
         },
         {
           chapter: 'Design patterns',
-          lessons: ['Abstract Factory', 'Singleton', 'Proxy', 'Mediator', 'Observer', 'Chain of Responsibility']
+          lessons: [{name:'Abstract Factory', link: '/home'}, {name:'Singleton', link: '/home'}, {name:'Proxy', link: '/home'}, {name:'Mediator', link: '/home'}, {name:'Observer', link: '/home'}, {name:'Chain of Responsibility', link: '/home'}]
         },
       ]
     },
@@ -90,11 +90,11 @@ export class HomeComponent implements OnInit {
       growthArray: [
         {
           chapter: 'WCF/gRPC',
-          lessons: ['What is WCF', 'What is gRPC', 'What are the similarities between WCF and gRPC', 'What are the differences between WCF and gRPC', 'Small SOA based on WCF', 'Small SOA based on gRPC']
+          lessons: [{name:'What is WCF', link: '/home'}, {name:'What is gRPC', link: '/home'}, {name:'What are the similarities between WCF and gRPC', link: '/home'}, {name:'What are the differences between WCF and gRPC', link: '/home'}, {name:'Small SOA based on WCF', link: '/home'}, {name:'Small SOA based on gRPC', link: '/home'}]
         },
         {
           chapter: 'MSMQ/RabbitMQ',
-          lessons: ['What is MSMQ', 'What is RabbitMQ', 'What are the similarities between MSMQ and RabbitMQ', 'What are the differences between MSMQ and RabbitMQ', 'Small application based on WCF', 'Small application based on gRPC']
+          lessons: [{name:'What is MSMQ', link: '/home'}, {name:'What is RabbitMQ', link: '/home'}, {name:'What are the similarities between MSMQ and RabbitMQ', link: '/home'}, {name:'What are the differences between MSMQ and RabbitMQ', link: '/home'}, {name:'Small application based on WCF', link: '/home'}, {name:'Small application based on gRPC', link: '/home'}]
         },
       ]
     }
@@ -102,6 +102,6 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log('Test');
+    console.log('/home');
   }
 }
