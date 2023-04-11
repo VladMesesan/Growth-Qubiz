@@ -1,0 +1,17 @@
+<div class="content">
+  <h3 class="home-title"><a target="_blank"
+      href="https://docs.google.com/spreadsheets/d/17WWlyEA8f491gTaqPc1S4_qH00xyd4uY1xRAE1o8Hc4/edit?pli=1#gid=1911797930">
+      Qubiz GROWTH File</a>
+  </h3>
+
+  <div class="lists-container">
+    <ol class="item-list" *ngFor="let phase of phaseData">
+      <p class="chapter-title">{{phase.phaseName}}</p>
+      <li class="chapter" *ngFor="let growth of phase.growthArray">{{growth.chapter}}
+        <ul class="item-sublist" *ngFor="let lesson of growth.lessons; let i = index">
+          <li>{{lesson}}</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+</div>

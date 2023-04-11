@@ -1,0 +1,154 @@
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+$dark-mode: #1F2125;
+$light-mode: #f6f7f9;
+$primary-color: #DB0962;
+
+body.dark-mode {
+  background-color: #2d3436 !important;
+  color: #dfe6e9;
+
+  body,
+  .container,
+  .mat-menu-panel,
+  .navbar-brand,
+  .bg-white,
+  .useful-links li a,
+  .home-title a,
+  .navbar-brand:active,
+  .navbar-brand:focus {
+  background-color: #2d3436 !important;
+  color: #dfe6e9;
+    transition: color 0.2s;
+  }
+
+  .useful-links li a:hover,
+  .home-title a:hover {
+    transition: 0.2s;
+    color: #DB0962;
+}
+
+  .mat-menu-panel {
+    background-color: #111111f1 !important;
+  }
+
+  .mat-tooltip {
+    background-color: rgba(20, 20, 20, 0.90);
+    border: 2px solid white;
+    box-shadow: grey 0px 3px 4px;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+  }
+}
+
+
+body.light-mode {
+
+  .container.light-mode,
+  .useful-links li a,
+  .home-title a {
+    background-color: #fff !important;
+    color: #2d3436;
+    transition: color 0.2s;
+  }
+
+  .useful-links li a:hover,
+  .home-title a:hover {
+    transition: 0.2s;
+    color: #DB0962;
+}
+
+  .mat-tooltip {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #111;
+    box-shadow: #111 0px 3px 4px;
+    color: black;
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+  .mat-menu-panel {
+    background-color: #e7e7e7f1 !important;
+  }
+}
+
+
+.container {
+  max-width: 2100px;
+}
+
+.btn-primary,
+.navbar-toggler {
+  color: black;
+  border: 1px solid black;
+  box-shadow: gray 2px 2px 2px;
+  font-weight: 600;
+  background-color: lightgray;
+}
+
+.btn-primary:hover {
+  background-color: $primary-color;
+  color: black;
+}
+
+.btn-primary:focus {
+  background-color: $primary-color;
+  color: black;
+}
+
+.mat-menu-panel {
+  margin-top: 5px;
+  box-shadow: 2px 4px 8px rgb(125 125 125);
+  border: 1px solid rgb(200 200 200);
+  padding: 5px;
+}
+
+.mat-menu-content {
+  padding: 0 !important;
+}
+
+.backend-start {
+  margin: 25px 0 10px 0;
+  text-decoration: underline;
+}
+
+.useful-links-header {
+  text-decoration: underline;
+}
+
+.useful-links,
+.home-title {
+  font-weight: 600;
+  padding-bottom: 20px;
+  border-bottom: 2px solid;
+  border-radius: 10px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-ripple.mat-checkbox-ripple .mat-ripple-element {
+  background-color: #DB0962 !important;
+}
+
+//scrollbar styling
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: $dark-mode;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #eee;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $primary-color;
+}

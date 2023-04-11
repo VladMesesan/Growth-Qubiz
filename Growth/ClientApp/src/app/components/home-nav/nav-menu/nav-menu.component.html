@@ -1,0 +1,538 @@
+<header>
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container">
+      <div class="nav-title">
+        <a class="navbar-brand" [routerLink]="['/']">Growth</a>
+        <img class="navbar-logo" [routerLink]="['/']"
+          src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Darwin_Technologies_Ltd_logo.png" alt="">
+      </div>
+
+      <input id="darkMode" type="checkbox" [checked]="darkMode$ | async" (change)="toggleTheme()" class="toggle" />
+      <label class="toggle-label" for="darkMode">
+        <mat-icon class="moon">bedtime</mat-icon>
+        <mat-icon class="sun">sunny</mat-icon>
+      </label>
+
+      <button mat-raised-button class="navbar-toggler btn-primary btn-toggler" [ngClass]="{ show: isExpanded }"
+        (click)="toggle()">
+        <!-- [matMenuTriggerFor]="burgerMenu" -->
+        <mat-icon>reorder</mat-icon>
+      </button>
+
+      <div class="navbar-collapse collapse" [ngClass]="{ show: isExpanded }">
+        <!-- <mat-menu #burgerMenu="matMenu"> -->
+        <ul class="navbar-nav flex-grow">
+          <li class="nav-item" mat-menu-item>
+            <button [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }" matTooltip="Home"
+              matTooltipPosition="below" mat-raised-button class="btn-primary" [routerLink]="['/']"
+              (click)="$event.stopPropagation()">
+              <mat-icon style="margin: auto; color: black;">home</mat-icon>
+            </button>
+            <button [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }"
+              matTooltip="C# Menu" matTooltipPosition="below" mat-raised-button class="btn-primary" mat-button
+              [matMenuTriggerFor]="cSharpMenu" (click)="$event.stopPropagation()">
+              <mat-icon style="margin: auto; color: black;">developer_board</mat-icon>
+            </button>
+            <button [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }"
+              matTooltip="OOP Menu" matTooltipPosition="below" mat-raised-button class="btn-primary" mat-button
+              [matMenuTriggerFor]="oopMenu" (click)="$event.stopPropagation()">
+              <mat-icon style="margin: auto; color: black;">data_object</mat-icon>
+            </button>
+            <button [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }" matTooltip="Growth"
+              matTooltipPosition="below" mat-raised-button class="btn-primary" mat-button
+              [matMenuTriggerFor]="othersMenu">
+              <mat-icon style="margin: auto; color: black;">layers</mat-icon>
+            </button>
+          </li>
+          <mat-menu #cSharpMenu="matMenu">
+            <li class="nav-item nav-nested-item csharp-list-item" [routerLinkActive]="['link-active']" mat-menu-item
+              (click)="$event.stopPropagation()">
+              <button mat-raised-button class="btn-primary" [routerLink]="['/linq-link']" matTooltip="LINQ"
+                matTooltipPosition="left">LINQ</button>
+            </li>
+            <li class="nav-item nav-nested-item csharp-list-item" [routerLinkActive]="['link-active']" mat-menu-item
+              (click)="$event.stopPropagation()">
+              <button mat-raised-button class="btn-primary" [routerLink]="['/value-and-reference']"
+                matTooltip="Value Types, Reference Types" matTooltipPosition="left">Val & Ref</button>
+            </li>
+            <li class="nav-item nav-nested-item csharp-list-item" [routerLinkActive]="['link-active']" mat-menu-item
+              (click)="$event.stopPropagation()">
+              <button mat-raised-button class="btn-primary" [routerLink]="['/passing-params']"
+                matTooltip="Passing Parameters" matTooltipPosition="left">Passing Params</button>
+            </li>
+            <li class="nav-item nav-nested-item csharp-list-item" [routerLinkActive]="['link-active']" mat-menu-item
+              (click)="$event.stopPropagation()">
+              <button mat-raised-button class="btn-primary" [routerLink]="['/box-and-unbox']"
+                matTooltip="Boxing & Unboxing" matTooltipPosition="left">Boxing & Unboxing</button>
+            </li>
+          </mat-menu>
+          <mat-menu #oopMenu="matMenu">
+            <li class="nav-item nav-nested-item oop-list-item" [routerLinkActive]="['link-active']" mat-menu-item
+              (click)="$event.stopPropagation()">
+              <button mat-raised-button class="btn-primary" [routerLink]="['/solid-link']"
+                matTooltip="Single-Responsibility | Open-closed | Liskov Substitution | Interface Segregation | Dependency Inversion"
+                matTooltipPosition="left">S O L I D</button>
+            </li>
+            <li class="nav-item nav-nested-item oop-list-item" [routerLinkActive]="['link-active']" mat-menu-item
+              (click)="$event.stopPropagation()">
+              <button mat-raised-button class="btn-primary" [routerLink]="['/oop-principles']"
+                matTooltip="Abstraction | Inheritance | Encapsulation | Polymorphism" matTooltipPosition="left">OOP
+                Principles</button>
+            </li>
+            <li class="nav-item nav-nested-item oop-list-item" [routerLinkActive]="['link-active']" mat-menu-item
+              (click)="$event.stopPropagation()">
+              <button mat-raised-button class="btn-primary" [routerLink]="['/class-vs-object']"
+                matTooltip="Template vs Instance" matTooltipPosition="left">Class vs Object</button>
+            </li>
+          </mat-menu>
+          <mat-menu #othersMenu="matMenu">
+            <li class="nav-item nav-nested-item others-list-item" [routerLinkActive]="['link-active']" mat-menu-item
+              (click)="$event.stopPropagation()">
+              <button [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }" mat-raised-button
+                class="btn-primary" [matMenuTriggerFor]="depInjectMenu" mat-button>Dependecy Injection</button>
+            </li>
+            <mat-menu #depInjectMenu="matMenu">
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/dep-inj-angular']">Inversion of
+                  Control</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/dep-inj-angular']">IoC
+                  Container</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/dep-inj-angular']">DI with C#</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/dep-inj-angular']">DI with Angular</button>
+              </li>
+              <p style="margin: 0">*Same links</p>
+            </mat-menu>
+            <li class="nav-item nav-nested-item others-list-item" [routerLinkActive]="['link-active']" mat-menu-item
+              (click)="$event.stopPropagation()">
+              <button [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }" mat-raised-button
+                class="btn-primary" [matMenuTriggerFor]="angularMenu" mat-button>Angular</button>
+            </li>
+            <mat-menu #angularMenu="matMenu">
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/modules']">Modules</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/components']">Components</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/data-binding']">Data-Binding</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/services']">Services</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/communication-interaction']" matTooltip="Communication/Interaction between all of the
+                  above" matTooltipPosition="left">Communication/Interaction between all of the
+                  above</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/reative-forms']">Reactive forms</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/lifecycle-hooks']">Angular Lifecycle
+                  hooks</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/observables']">Observables -
+                  RxJs</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/unit-tests']">Unit-Tests</button>
+              </li>
+            </mat-menu>
+            <li class="nav-item nav-nested-item others-list-item" [routerLinkActive]="['link-active']" mat-menu-item
+              (click)="$event.stopPropagation()">
+              <button [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }" mat-raised-button
+                class="btn-primary" [matMenuTriggerFor]="SqlMenu" mat-button>SQL</button>
+            </li>
+            <mat-menu #SqlMenu="matMenu">
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">One SQL Course</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">15-20 scripts on Darwin
+                  Databases</button>
+              </li>
+            </mat-menu>
+            <li class="nav-item nav-nested-item others-list-item" [routerLinkActive]="['link-active']" mat-menu-item
+              (click)="$event.stopPropagation()"> <button [routerLinkActive]="['link-active']"
+                [routerLinkActiveOptions]="{ exact: true }" mat-raised-button class="btn-primary"
+                [matMenuTriggerFor]="MongoMenu" mat-button>MongoDB</button></li>
+            <mat-menu #MongoMenu="matMenu">
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">One Mongo course</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">15-20 scrips on Darwin
+                  databases</button>
+              </li>
+            </mat-menu>
+            <li class="nav-item nav-nested-item others-list-item" [routerLinkActive]="['link-active']" mat-menu-item
+              (click)="$event.stopPropagation()"> <button [routerLinkActive]="['link-active']"
+                [routerLinkActiveOptions]="{ exact: true }" mat-raised-button class="btn-primary"
+                [matMenuTriggerFor]="CleanCodeMenu" mat-button>Clean
+                Code</button></li>
+            <mat-menu #CleanCodeMenu="matMenu">
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Project Coding Standards</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">DRY/KISS/YAGNI
+                  Principles</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Refactoring</button>
+              </li>
+            </mat-menu>
+            <li class="nav-item nav-nested-item others-list-item" [routerLinkActive]="['link-active']" mat-menu-item
+              (click)="$event.stopPropagation()"> <button [routerLinkActive]="['link-active']"
+                [routerLinkActiveOptions]="{ exact: true }" mat-raised-button class="btn-primary"
+                [matMenuTriggerFor]="DebuggingMenu" mat-button>Debugging</button></li>
+            <mat-menu #DebuggingMenu="matMenu">
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Event Viewer</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Client Errors</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Call Stack</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Try/Catch</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Conditional Breakpoints</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Getter/Setter
+                  Breakpoints</button>
+              </li>
+            </mat-menu>
+            <li class="nav-item nav-nested-item others-list-item" [routerLinkActive]="['link-active']" mat-menu-item
+              (click)="$event.stopPropagation()"> <button [routerLinkActive]="['link-active']"
+                [routerLinkActiveOptions]="{ exact: true }" mat-raised-button class="btn-primary"
+                [matMenuTriggerFor]="CodingSuccessMenu" mat-button>Coding for
+                success</button></li>
+            <mat-menu #CodingSuccessMenu="matMenu">
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Readibility</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Testability</button>
+              </li>
+            </mat-menu>
+            <li class="nav-item nav-nested-item others-list-item" [routerLinkActive]="['link-active']" mat-menu-item
+              (click)="$event.stopPropagation()"> <button [routerLinkActive]="['link-active']"
+                [routerLinkActiveOptions]="{ exact: true }" mat-raised-button class="btn-primary"
+                [matMenuTriggerFor]="TestDrivenMenu" mat-button>Test Driven
+                Development</button></li>
+            <mat-menu #TestDrivenMenu="matMenu">
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Unit Tests</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Integration Tests</button>
+              </li>
+            </mat-menu>
+            <li class="nav-item nav-nested-item others-list-item" [routerLinkActive]="['link-active']" mat-menu-item
+              (click)="$event.stopPropagation()"> <button [routerLinkActive]="['link-active']"
+                [routerLinkActiveOptions]="{ exact: true }" mat-raised-button class="btn-primary"
+                [matMenuTriggerFor]="ProjectRelatedMenu" mat-button>Project
+                related items</button></li>
+            <mat-menu #ProjectRelatedMenu="matMenu">
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']" matTooltip="No more than one change per
+                item/area during code review" matTooltipPosition="below">No more than one change per
+                  item/area during code review</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']" matTooltip="Future work should not contain
+                issues already identified in previous code reviews" matTooltipPosition="below">Future work should not
+                  contain
+                  issues already identified in previous code reviews</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']" matTooltip="All stories have estimates and we
+                stick to them in optimal conditions (when nothing changes from business, UX)"
+                  matTooltipPosition="below">All stories have estimates and we
+                  stick to them in optimal conditions (when nothing changes from business, UX)</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']"
+                  matTooltip="Understand project architecture and be able to explain it"
+                  matTooltipPosition="below">Understand project architecture and be able to explain it</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">No P1 and P2 bugs</button>
+              </li>
+            </mat-menu>
+            <li class="nav-item nav-nested-item others-list-item" [routerLinkActive]="['link-active']" mat-menu-item
+              (click)="$event.stopPropagation()"> <button [routerLinkActive]="['link-active']"
+                [routerLinkActiveOptions]="{ exact: true }" mat-raised-button class="btn-primary"
+                [matMenuTriggerFor]="OwnerOfWorkMenu" mat-button>Owner of
+                your work</button></li>
+            <mat-menu #OwnerOfWorkMenu="matMenu">
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']" matTooltip="Involve appropriate stakeholders
+                in each epic" matTooltipPosition="below">Involve appropriate stakeholders
+                  in each epic</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']" matTooltip="Start to end development cycle of
+                the story" matTooltipPosition="below">Start to end development cycle of
+                  the story</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']" matTooltip="Coordinate the investigation of
+                the story/epic" matTooltipPosition="below">Coordinate the investigation of
+                  the story/epic</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']" matTooltip="Communication with the
+                stakeholders should be clear and addapted to their technical skills"
+                  matTooltipPosition="below">Communication with the
+                  stakeholders should be clear and addapted to their technical skills</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']" matTooltip="Constructive attitude towards
+                feedback" matTooltipPosition="below">Constructive attitude towards
+                  feedback</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']" matTooltip="Proactivity, challenge
+                requirements with strong arguments and try to explain them in a positive way"
+                  matTooltipPosition="below">Proactivity, challenge
+                  requirements with strong arguments and try to explain them in a positive way</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Code complete</button>
+              </li>
+            </mat-menu>
+            <li class="nav-item nav-nested-item others-list-item" [routerLinkActive]="['link-active']" mat-menu-item
+              (click)="$event.stopPropagation()"> <button [routerLinkActive]="['link-active']"
+                [routerLinkActiveOptions]="{ exact: true }" mat-raised-button class="btn-primary"
+                [matMenuTriggerFor]="ArchitectureMenu" mat-button>Architecture understanding</button></li>
+            <mat-menu #ArchitectureMenu="matMenu">
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']" matTooltip="Understand what SOA is and how
+                services interact" matTooltipPosition="below">Understand what SOA is and how
+                  services interact</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Principles of SOA</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">SOA Patterns</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Implementation
+                  approaches</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">The iDesign Method</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']" matTooltip="Build a small application that
+                adheres to the SOA standards" matTooltipPosition="below">Build a small application that
+                  adheres to the SOA standards</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']" matTooltip="The above application should also
+                be documented with high level SOA diagrams" matTooltipPosition="below">The above application should
+                  also
+                  be documented with high level SOA diagrams</button>
+              </li>
+            </mat-menu>
+            <li class="nav-item nav-nested-item others-list-item" [routerLinkActive]="['link-active']" mat-menu-item
+              (click)="$event.stopPropagation()"> <button [routerLinkActive]="['link-active']"
+                [routerLinkActiveOptions]="{ exact: true }" mat-raised-button class="btn-primary" matTooltip="Performance
+                testing and profiling" matTooltipPosition="below" [matMenuTriggerFor]="PerformanceProfilingMenu"
+                mat-button>Performance
+                testing and profiling</button></li>
+            <mat-menu #PerformanceProfilingMenu="matMenu">
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']"
+                  matTooltip="Visual Studio Web and Load testing" matTooltipPosition="below">Visual Studio Web and Load
+                  testing</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Visual Studio Performace
+                  Profiler</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">SQL Server Profiler</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']"
+                  matTooltip="Using available tools to detect performance issues" matTooltipPosition="below">Using
+                  available tools to detect performance issues</button>
+              </li>
+            </mat-menu>
+            <li class="nav-item nav-nested-item others-list-item" [routerLinkActive]="['link-active']" mat-menu-item
+              (click)="$event.stopPropagation()"> <button [routerLinkActive]="['link-active']"
+                [routerLinkActiveOptions]="{ exact: true }" mat-raised-button class="btn-primary"
+                [matMenuTriggerFor]="DesignPatternsMenu" mat-button> Design
+                patterns</button></li>
+            <mat-menu #DesignPatternsMenu="matMenu">
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Abstract Factory</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Singleton</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Proxy</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Mediator</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Observer</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Chain of Responsibility</button>
+              </li>
+            </mat-menu>
+            <li class="nav-item nav-nested-item others-list-item" [routerLinkActive]="['link-active']" mat-menu-item
+              (click)="$event.stopPropagation()"> <button [routerLinkActive]="['link-active']"
+                [routerLinkActiveOptions]="{ exact: true }" mat-raised-button class="btn-primary"
+                [matMenuTriggerFor]="WCFgRPCMenu" mat-button>WCF/gRPC</button></li>
+            <mat-menu #WCFgRPCMenu="matMenu">
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">What is WCF</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">What is gRPC</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']" matTooltip="Similarities between WCF and
+                gRPC" matTooltipPosition="below">Similarities between WCF and
+                  gRPC</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']" matTooltip="Differences between WCF and
+                gRPC" matTooltipPosition="below">Differences between WCF and
+                  gRPC</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Small SOA based on WCF</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Small SOA based on gRPC</button>
+              </li>
+            </mat-menu>
+            <li class="nav-item nav-nested-item others-list-item" [routerLinkActive]="['link-active']" mat-menu-item
+              (click)="$event.stopPropagation()"> <button [routerLinkActive]="['link-active']"
+                [routerLinkActiveOptions]="{ exact: true }" mat-raised-button class="btn-primary"
+                [matMenuTriggerFor]="MSMQRabbitMQMenu" mat-button>MSMQ/RabbitMQ</button></li>
+            <mat-menu #MSMQRabbitMQMenu="matMenu">
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">What is MSMQ</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">What is RabbitMQ</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']" matTooltip="Similarities between MSMQ and
+                RabbitMQ" matTooltipPosition="below">Similarities between MSMQ and
+                  RabbitMQ</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']" matTooltip="Differences between MSMQ and
+                RabbitMQ" matTooltipPosition="below">Differences between MSMQ and
+                  RabbitMQ</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Small application based on
+                  WCF</button>
+              </li>
+              <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
+                (click)="$event.stopPropagation()">
+                <button mat-raised-button class="btn-primary" [routerLink]="['/LINK']">Small application based on
+                  gRPC</button>
+              </li>
+            </mat-menu>
+          </mat-menu>
+        </ul>
+        <!-- </mat-menu> -->
+      </div>
+    </div>
+  </nav>
+</header>
