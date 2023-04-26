@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
         },
         {
           chapter: 'Dependency Injection',
-          lessons: [{ name: 'Inversion of control', link: '/home' }, { name: 'IoC Container', link: '/home' }, { name: 'DI with C#', link: '/home' }, { name: 'DI with Angular', link: '/dep-inj-angular' }]
+          lessons: [{ name: 'Inversion of control', link: '/home' }, { name: 'IoC Container', link: '/dep-inj-angular' }, { name: 'DI with C#', link: '/dep-inj-angular' }, { name: 'DI with Angular', link: '/dep-inj-angular' }]
         },
         {
           chapter: 'Angular',
