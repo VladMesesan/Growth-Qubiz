@@ -336,6 +336,8 @@ namespace Growth.Controllers.ObjectOrientedProgramming
     //      1. High-level modules should not depend on low-level modules.Instead, both should depend on abstractions (interfaces)
     //      2. Abstractions should not depend on details.Details (like concrete implementations) should depend on abstractions.
 
+    //To do this, we introduce an abstract interface in between.
+
     //'ONE'(1) reverses traditional OOP software design. Without DIP, programmers often construct programs to have high-level (less detail, more abstract) components,
     //explicitly connected with low-level (specific) components to complete tasks.
     //DIP decouples high and low-level components and instead connects both to abstractions.

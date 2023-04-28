@@ -14,7 +14,7 @@
       </label>
 
       <button mat-raised-button class="btn-primary btn-back" (click)="goBack()" matTooltip="Back"
-              matTooltipPosition="below" *ngIf="router.url != '/home'">
+              matTooltipPosition="below" *ngIf="router.url !== '/home'">
         <mat-icon>keyboard_backspace</mat-icon>
       </button>
 
@@ -145,7 +145,7 @@
               </li>
               <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
                 (click)="$event.stopPropagation()">
-                <button mat-raised-button class="btn-primary" [routerLink]="['/reative-forms']">Reactive forms</button>
+                <button mat-raised-button class="btn-primary" [routerLink]="['/reactive-forms']">Reactive forms</button>
               </li>
               <li class="nav-item nav-nested-item" [routerLinkActive]="['link-active']" mat-menu-item
                 (click)="$event.stopPropagation()">

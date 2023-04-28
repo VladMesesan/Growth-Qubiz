@@ -23,11 +23,11 @@ export class HomeComponent implements OnInit {
         },
         {
           chapter: 'Dependency Injection',
-          lessons: [{ name: 'Inversion of control', link: '/home' }, { name: 'IoC Container', link: '/dep-inj-angular' }, { name: 'DI with C#', link: '/dep-inj-angular' }, { name: 'DI with Angular', link: '/dep-inj-angular' }]
+          lessons: [{ name: 'Inversion of control', link: '/dep-inj-angular' }, { name: 'IoC Container', link: '/dep-inj-angular' }, { name: 'DI with C#', link: '/dep-inj-angular' }, { name: 'DI with Angular', link: '/dep-inj-angular' }]
         },
         {
           chapter: 'Angular',
-          lessons: [{ name: 'Modules', link: '/home' }, { name: 'Components', link: '/home' }, { name: 'Data-Binding', link: '/home' }, { name: 'Services', link: '/home' }, { name: 'Communication/Interaction between all of the above', link: '/home' }, { name: 'Reactive forms', link: '/home' }, { name: 'Angular Lifecycle hooks', link: '/home' }, { name: 'Observables - RxJs', link: '/home' }, { name: 'Unit-Tests', link: '/home' }]
+          lessons: [{ name: 'Modules', link: '/home' }, { name: 'Components', link: '/home' }, { name: 'Data-Binding', link: '/home' }, { name: 'Services', link: '/home' }, { name: 'Communication/Interaction between all of the above', link: '/home' }, { name: 'Reactive forms', link: '/reactive-forms' }, { name: 'Angular Lifecycle hooks', link: '/home' }, { name: 'Observables - RxJs', link: '/home' }, { name: 'Unit-Tests', link: '/home' }]
         },
         {
           chapter: 'SQL',

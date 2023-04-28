@@ -1,0 +1,48 @@
+<div class="reactive-forms-container">
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <label for="first-name">First Name: </label><br>
+    <input id="first-name" type="text" formControlName="firstName" required><br>
+
+    <label for="last-name">Last Name: </label><br>
+    <input id="last-name" type="text" formControlName="lastName">
+
+    <div formGroupName="address">
+      <h2>Address</h2>
+
+      <label for="street">Street: </label><br>
+      <input id="street" type="text" formControlName="street"><br>
+
+      <label for="city">City: </label><br>
+      <input id="city" type="text" formControlName="city"><br>
+
+      <label for="state">State: </label><br>
+      <input id="state" type="text" formControlName="state"><br>
+
+      <label for="zip">Zip Code: </label><br>
+      <input id="zip" type="text" formControlName="zip">
+    </div>
+
+    <div formArrayName="aliases">
+      <h2>Aliases</h2>
+      <button type="button" (click)="addAlias()">+ Add another alias</button>
+
+      <div *ngFor="let alias of aliases.controls; let i=index">
+        <!-- The repeated alias template -->
+        <label for="alias-{{ i }}">Alias:</label>
+        <input id="alias-{{ i }}" type="text" [formControlName]="i">
+      </div>
+    </div>
+
+
+    <p>Complete the form to enable button.</p>
+    <button mat-raised-button class="btn-secondary" type="submit" [disabled]="!profileForm.valid">Submit</button>
+  </form>
+
+  <hr>
+
+  <p>Form Value: {{ profileForm.value | json }}</p>
+
+  <p>Form Status: {{ profileForm.status }}</p>
+
+  <button mat-raised-button class="btn-secondary" type="button" (click)="updateProfile()">Update Profile</button>
+</div>

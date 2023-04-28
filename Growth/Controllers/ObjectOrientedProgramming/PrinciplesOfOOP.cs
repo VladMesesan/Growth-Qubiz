@@ -33,7 +33,7 @@ namespace Growth.Controllers.ObjectOrientedProgramming
             car.SetModel("BMW");
             car.SetHP(190);
             car.TurnKey();
-            car.GetHP(); // is the only way to get the HorsePower, can just call car.HP
+            car.GetHP(); // is the only way to get the HorsePower, can't just call "car.HP"
 
 
             //POLYMORPHISM----------POLYMORPHISM----------POLYMORPHISM
@@ -48,9 +48,9 @@ namespace Growth.Controllers.ObjectOrientedProgramming
                 IsHappy = false
             };
 
-            //METHOD OVERLOAD (Static polymorphism) - same name, different number of parameters
+            //METHOD OVERLOAD (Static polymorphism) - same name, different number/type of parameters
             //method is chosen at COMPILE TIME
-            rex.PaintOnSide("Vlad");
+            rex.PaintOnSide("Vlad"); //would work without having override keyword on method
             rex.PaintOnSide(33);
             rex.PaintOnSide(33, 66);
             rex.Pet();
@@ -61,7 +61,7 @@ namespace Growth.Controllers.ObjectOrientedProgramming
             sissy.IsAGoodBoy = false; //since it's a girls' name
             sissy.Pet();
 
-            //METHOD OVERRIDE (Dynamic polymorphism) - same name and number of parameters
+            //METHOD OVERRIDE (Dynamic polymorphism) - same name and number/type of parameters
             //we need virtual/override modifiers for this to take effect
             //method is chosen at RUNTIME
             lion.PaintOnSide("Hello"); //this will call the Animal method
