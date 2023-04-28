@@ -378,7 +378,7 @@ namespace Growth.Controllers.ObjectOrientedProgramming
             }
         }
 
-        //Finally, we’ll implement a high-level component CustomerBuisnessLogic that also implements the interface ICustomerDataAccess.
+        //Finally, we’ll implement a high-level component CustomerBusinessLogic that also implements the interface ICustomerDataAccess.
         //Notice that our high-level component does not implement our low-level component but merely uses it.
         public class CustomerBusinessLogic
         {
