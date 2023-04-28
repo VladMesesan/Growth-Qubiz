@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home-nav/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MatButtonModule, MatCheckboxModule, MatIconModule, MatMenuModule, MatTooltipModule } from '@angular/material';
-import { FormsModule } from '@angular/forms';
+import { MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatIconModule, MatInputModule, MatMenuModule, MatTooltipModule } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { LinqComponent } from './c-sharp/linq/linq.component';
@@ -16,6 +16,9 @@ import { SolidComponent } from './oop/solid/solid.component';
 import { ClassVsObjectComponent } from './oop/class-vs-object/class-vs-object.component';
 import { OopPrinciplesComponent } from './oop/oop-principles/oop-principles.component';
 import { DependencyInjectionComponent } from './dependency-injection/dependency-injection.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { NameEditorComponent } from './reactive-forms/name-editor/name-editor.component';
+import { ProfileEditorComponent } from './reactive-forms/profile-editor/profile-editor.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { DependencyInjectionComponent } from './dependency-injection/dependency-
     SolidComponent,
     ClassVsObjectComponent,
     OopPrinciplesComponent,
-    DependencyInjectionComponent
+    DependencyInjectionComponent,
+    ReactiveFormsComponent,
+    NameEditorComponent,
+    ProfileEditorComponent
   ],
   imports: [
     CommonModule,
@@ -45,6 +51,7 @@ import { DependencyInjectionComponent } from './dependency-injection/dependency-
       { path: 'oop-principles', component: OopPrinciplesComponent },
       { path: 'solid-link', component: SolidComponent },
       { path: 'dep-inj-angular', component: DependencyInjectionComponent },
+      { path: 'reactive-forms', component: ReactiveFormsComponent },
     ]),
     HttpClientModule,
     FormsModule,
@@ -52,7 +59,10 @@ import { DependencyInjectionComponent } from './dependency-injection/dependency-
     MatTooltipModule,
     MatMenuModule,
     MatIconModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   exports: [
     ValueAndReferenceTypesComponent,

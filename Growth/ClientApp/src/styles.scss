@@ -95,12 +95,17 @@ body.light-mode {
 }
 
 .btn-primary,
+.btn-secondary,
 .navbar-toggler {
   color: black;
   border: 1px solid black;
   box-shadow: gray 2px 2px 2px;
   font-weight: 600;
   background-color: lightgray;
+}
+
+.btn-secondary {
+  height: 32px;
 }
 
 .btn-primary:hover {
@@ -111,6 +116,17 @@ body.light-mode {
 
 .btn-primary:focus {
   background-color: $primary-color;
+  color: black;
+}
+
+.btn-secondary:hover {
+  transition: 0.1s !important;
+  background-color: $secondary-color;
+  color: black;
+}
+
+.btn-secondary:focus {
+  background-color: $secondary-color;
   color: black;
 }
 
@@ -149,6 +165,12 @@ body.light-mode {
 .mat-checkbox-checked.mat-accent .mat-checkbox-background,
 .mat-ripple.mat-checkbox-ripple .mat-ripple-element {
   background-color: $primary-color !important;
+}
+
+.reactive-forms-container {
+  border: 1px solid;
+  border-radius: 20px;
+  padding: 20px;
 }
 
 //scrollbar styling

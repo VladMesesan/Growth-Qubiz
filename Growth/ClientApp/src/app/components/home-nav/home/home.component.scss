@@ -5,13 +5,14 @@
 }
 
 .lesson:hover {
-  color: #269FEE;
-  text-decoration: dashed;
+  border-radius: 5px;
+  padding: 0 5px 0 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(38,159,238,0.75) 35%, rgba(0,0,0,0) 100%);
 }
 
-.lesson:hover:after {
-  content: " <";
-}
+// .lesson:hover:after {
+//   content: " <";
+// }
 
 // .lesson:hover:before {
 //   content: ">";

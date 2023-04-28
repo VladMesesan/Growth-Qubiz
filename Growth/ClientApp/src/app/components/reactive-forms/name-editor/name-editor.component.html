@@ -1,0 +1,8 @@
+<div class="reactive-forms-container">
+  <label for="name">Name: </label><br>
+  <input id="name" type="text" [formControl]="name"><br><br>
+
+  <p>Value: {{ name.value }}</p>
+
+  <button mat-raised-button class="btn-secondary" type="button" (click)="updateName()">Update Name</button>
+</div>
