@@ -32,7 +32,9 @@ export class ProfileEditorComponent {
     this.profileForm.patchValue({
       firstName: 'Nancy',
       address: {
-        street: '123 Drew Street'
+        street: '123 Drew Street',
+        city: 'New York',
+        state: 'New York'
       }
     });
   }

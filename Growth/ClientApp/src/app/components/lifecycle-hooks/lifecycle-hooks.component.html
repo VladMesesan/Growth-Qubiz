@@ -1,0 +1,79 @@
+<h1>Angualr Lifecycle Hooks:</h1>
+<h4 class="useful-links-header">Useful links:</h4>
+<ul class="useful-links">
+  <li><a target="_blank" href="https://angular.io/guide/lifecycle-hooks">Angular.io</a></li>
+</ul>
+<div class="details">
+  <h2>Details:</h2>
+  <p>Angular executes hook methods in the following sequence:</p>
+  <table>
+    <tr>
+      <th>HOOK METHOD</th>
+      <th>PURPOSE</th>
+      <th>TIMING</th>
+    </tr>
+    <tr>
+      <td class="hook-name">ngOnChanges()</td>
+      <td>
+        <p>Respond when Angular sets or resets data-bound input properties. The method receives a SimpleChanges object
+          of
+          current and previous property values.</p>
+        <app-note-custom-component [headerText]="'Note:'"
+          [noteText]="'This happens frequently, so any operation you perform here impacts performance significantly. See details in Using change detection hooks in this document.'"></app-note-custom-component>
+      </td>
+      <td>
+        <p>Called before ngOnInit() (if the component has bound inputs) and whenever one or more data-bound input
+          properties change.</p>
+        <app-note-custom-component [headerText]="'Note:'"
+          [noteText]="'If your component has no inputs or you use it without providing any inputs, the framework will not call ngOnChange().'"></app-note-custom-component>
+      </td>
+    </tr>
+    <tr>
+      <td class="hook-name">ngOnInit()</td>
+      <td>Initialize the directive or component after Angular first displays the data-bound properties and sets the
+        directive or component's input properties. See details in Initializing a component or directive in this
+        document.</td>
+      <td>Called once, after the first ngOnChanges(). ngOnInit() is still called even when ngOnChanges() is not (which
+        is the case when there are no template-bound inputs).</td>
+    </tr>
+    <tr>
+      <td class="hook-name">ngDoCheck()</td>
+      <td>Detect and act upon changes that Angular can't or won't detect on its own. See details and example in Defining
+        custom change detection in this document.</td>
+      <td>Called immediately after ngOnChanges() on every change detection run, and immediately after ngOnInit() on the
+        first run.</td>
+    </tr>
+    <tr>
+      <td class="hook-name">ngAfterContentInit()</td>
+      <td>Respond after Angular projects external content into the component's view, or into the view that a directive
+        is in.
+        See details and example in Responding to changes in content in this document.</td>
+      <td>Called once after the first ngDoCheck().</td>
+    </tr>
+    <tr>
+      <td class="hook-name">ngAfterContentChecked()</td>
+      <td>Respond after Angular checks the content projected into the directive or component.
+        See details and example in Responding to projected content changes in this document.</td>
+      <td>Called after ngAfterContentInit() and every subsequent ngDoCheck().</td>
+    </tr>
+    <tr>
+      <td class="hook-name">ngAfterViewInit()</td>
+      <td> Respond after Angular initializes the component's views and child views, or the view that contains the
+        directive.
+        See details and example in Responding to view changes in this document.</td>
+      <td>Called once after the first ngAfterContentChecked().</td>
+    </tr>
+    <tr>
+      <td class="hook-name">ngAfterViewChecked()</td>
+      <td>Respond after Angular checks the component's views and child views, or the view that contains the directive.
+      </td>
+      <td>Called after the ngAfterViewInit() and every subsequent ngAfterContentChecked().</td>
+    </tr>
+    <tr>
+      <td class="hook-name">ngOnDestroy()</td>
+      <td>Cleanup just before Angular destroys the directive or component. Unsubscribe Observables and detach event
+        handlers to avoid memory leaks. See details in Cleaning up on instance destruction in this document.</td>
+      <td>Called immediately before Angular destroys the directive or component.</td>
+    </tr>
+  </table>
+</div>

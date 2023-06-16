@@ -1,33 +1,47 @@
 // Dark Mode
-$darkmode-background-colour: #2d3436;
-$darkmode-text-colour: #dfe6e9;
+html.dark-mode {
+  --text-colour: #dfe6e9;
+  --background-colour: #2d3436;
 
-$darkmode-scrollbar-track: #fff;
-$darkmode-scrollbar-thumb: #1F2125;
+  --scrollbar-track: #fff;
+  --scrollbar-thumb: #1F2125;
 
-$darkmode-tooltip-background: #232323e6;
-$darkmode-tooltip-border: #969696;
-$darkmode-tooltip-shadow: #575757;
+  --tooltip-background: #232323e6;
+  --tooltip-border: #969696;
+  --tooltip-shadow: #575757;
+  --tooltip-text-colour: #dfe6e9;
 
-$darkmode-panel-background: #111111f1;
+  --navbar-shadow: #d3d3d3;
 
+  --panel-background: #111111f1;
 
-//Light Mode
-$lightmode-background-colour: #f6f7f9;
-$lightmode-text-colour: #1F2125;
+  --border-fade: #7a7a7a86;
+  --primary-color: #269FEE;
+  --secondary-color: #EA6228;
+}
 
-$lightmode-scrollbar-track: #292929;
-$lightmode-scrollbar-thumb: #cacaca;
+// Light Mode
+html.light-mode {
+  --text-colour: #1F2125;
+  --background-colour: #f6f7f9;
 
-$lightmode-tooltip-background: #ebebebe6;
-$lightmode-tooltip-border: #656565;
-$lightmode-tooltip-shadow: #b7b7b7;
+  --navbar-shadow: #474747f1;
 
-$lightmode-panel-background: #111111f1;
+  --scrollbar-track: #292929;
+  --scrollbar-thumb: #cacaca;
 
-//General
+  --tooltip-background: #c2c2c2e6;
+  --tooltip-border: #656565;
+  --tooltip-shadow: #b7b7b7;
+  --tooltip-text-colour: #1F2125;
+
+  --panel-background: #f0f0f0;
+
+  --border-fade: #7a7a7a86;
+  --primary-color: #1e9400;
+  --secondary-color: #c71f1f;
+}
+
+// General
 $white: #fff;
 $black: #000;
-$primary-color: #269FEE;
-$secondary-color: #EA6228;
-

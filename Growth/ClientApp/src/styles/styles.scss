@@ -1,32 +1,41 @@
 @import "../../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "colours.scss";
 
+body {
+  height: 100vh;
+}
+
+html:not(.dark-mode-preloading),
+body:not(.dark-mode-preloading),
+.container:not(.dark-mode-preloading),
+.navbar:not(.dark-mode-preloading),
+nav:not(.dark-mode-preloading),
+.navbar-brand:not(.dark-mode-preloading),
+a:not(.dark-mode-preloading) {
+  transition: all 1s linear;
+}
+
 h1 {
   text-align: center;
   text-decoration: underline;
+  color: var(--background-colour);
+  text-shadow: -1px -1px 0 var(--text-colour), 1px -1px 0 var(--text-colour), -1px 1px 0 var(--text-colour), 1px 1px 0 var(--text-colour);
 }
 
-body:not(.dark-mode-preloading),
-.navbar:not(.dark-mode-preloading) {
-  transition: all 1s ease-in-out;
-}
+html {
+  background-color: var(--background-colour) !important;
 
-html.dark-mode {
-  h1 {
-    color: $darkmode-background-colour;
-    text-shadow: -1px -1px 0 $white, 1px -1px 0 $white, -1px 1px 0 $white, 1px 1px 0 $white;
+  header {
+    margin-bottom: 90px;
   }
 
-  background-color: $darkmode-background-colour !important;
-  color: $darkmode-text-colour;
-
   ::-webkit-scrollbar-track {
-    background: $darkmode-scrollbar-track;
+    background: var(--scrollbar-track);
     border-radius: 3px;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: $darkmode-scrollbar-thumb;
+    background: var(--scrollbar-thumb);
     border-radius: 3px;
   }
 
@@ -39,78 +48,29 @@ html.dark-mode {
   .navbar-brand,
   .navbar-brand:active,
   .navbar-brand:focus {
-    background-color: $darkmode-background-colour !important;
-    color: $darkmode-text-colour;
-    transition: color 0.2s;
+    background-color: var(--background-colour) !important;
+    color: var(--text-colour);
   }
 
   .useful-links li a:hover,
   .home-title a:hover {
     transition: 0.2s;
-    color: $primary-color;
+    color: var(--primary-color);
   }
 
   .mat-menu-panel {
-    background-color: $darkmode-panel-background !important;
+    background-color: var(--panel-background) !important;
   }
 
   .mat-tooltip {
-    background-color: $darkmode-tooltip-background;
-    border: 2px solid $darkmode-tooltip-border;
-    box-shadow: $darkmode-tooltip-shadow 0px 3px 4px;
-    color: $white;
+    background-color: var(--tooltip-background);
+    border: 2px solid var(--tooltip-border);
+    box-shadow: var(--tooltip-shadow) 0px 3px 4px;
+    color: var(--tooltip-text-colour);
     font-weight: 600;
     font-size: 12px;
   }
 }
-
-
-html.light-mode {
-  h1 {
-    color: $white;
-    text-shadow: -1px -1px 0 $black, 1px -1px 0 $black, -1px 1px 0 $black, 1px 1px 0 $black;
-  }
-
-  background-color: $lightmode-background-colour !important;
-  color: $lightmode-text-colour;
-
-  ::-webkit-scrollbar-track {
-    background: $lightmode-scrollbar-track;
-    border-radius: 3px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: $lightmode-scrollbar-thumb;
-    border-radius: 3px;
-  }
-
-  .container.light-mode,
-  .useful-links li a,
-  .home-title a {
-    color: $lightmode-text-colour;
-    transition: color 0.2s;
-  }
-
-  .useful-links li a:hover,
-  .home-title a:hover {
-    transition: 0.2s;
-    color: $primary-color;
-  }
-
-  .mat-tooltip {
-    background-color: $lightmode-tooltip-background;
-    border: 2px solid $lightmode-tooltip-border;
-    box-shadow: $lightmode-tooltip-shadow 0px 3px 4px;
-    color: $black;
-    font-weight: 600;
-    font-size: 12px;
-  }
-
-  .mat-menu-panel {
-    background-color: $white !important;
-  }
-}
-
 
 .container {
   max-width: 2100px;
@@ -132,30 +92,30 @@ html.light-mode {
 
 .btn-primary:hover {
   transition: 0.1s !important;
-  background-color: $primary-color;
+  background-color: var(--primary-color);
   color: $black;
 }
 
 .btn-primary:focus {
-  background-color: $primary-color;
+  background-color: var(--primary-color);
   color: $black;
 }
 
 .btn-secondary:hover {
   transition: 0.1s !important;
-  background-color: $secondary-color;
+  background-color: var(--secondary-color);
   color: $black;
 }
 
 .btn-secondary:focus {
-  background-color: $secondary-color;
+  background-color: var(--secondary-color);
   color: $black;
 }
 
 .mat-menu-panel {
   margin-top: 5px;
   box-shadow: 2px 4px 8px rgb(125 125 125);
-  border: 1px solid $secondary-color;
+  border: 1px solid var(--secondary-color);
   padding: 5px;
 }
 
@@ -186,7 +146,7 @@ html.light-mode {
 
 .mat-checkbox-checked.mat-accent .mat-checkbox-background,
 .mat-ripple.mat-checkbox-ripple .mat-ripple-element {
-  background-color: $primary-color !important;
+  background-color: var(--primary-color) !important;
 }
 
 .reactive-forms-container {
@@ -201,5 +161,5 @@ html.light-mode {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: $primary-color;
+  background: var(--primary-color);
 }
