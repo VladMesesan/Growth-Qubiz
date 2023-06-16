@@ -21,14 +21,14 @@ namespace Growth.Controllers.Csharp
                 x.RefName = "AAAAA";
             }
 
-            static void SendVal2(ValueAndReferenceType x)
-            {
-                x = new ValueAndReferenceType { RefName = "CCCCC" };
-            }
-
             static void SendRef(ref ValueAndReferenceType x)
             {
                 x = new ValueAndReferenceType { RefName = "BBBBB" };
+            }
+
+            static void SendVal2(ValueAndReferenceType x)
+            {
+                x = new ValueAndReferenceType { RefName = "CCCCC" };
             }
 
             Trace.WriteLine("Before: " + originalObject.RefName); // Value
@@ -36,6 +36,8 @@ namespace Growth.Controllers.Csharp
             Trace.WriteLine("In between: " + originalObject.RefName); // AAAAA
             SendRef(ref originalObject);
             Trace.WriteLine("After: " + originalObject.RefName); // BBBBB - because we send a 'ref Object', so 'new Object' works.
+            SendVal2(originalObject);
+            Trace.WriteLine("After sendVal2: " + originalObject.RefName);
 
             ValueAndReferenceType newObj = originalObject;
             newObj.RefName = "BothChanged?";

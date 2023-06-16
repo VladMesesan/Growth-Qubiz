@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Rewrite;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
 using System.Net.Mail;
-using System.Reflection.Emit;
-using System.Reflection;
 
 namespace Growth.Controllers.ObjectOrientedProgramming
 {

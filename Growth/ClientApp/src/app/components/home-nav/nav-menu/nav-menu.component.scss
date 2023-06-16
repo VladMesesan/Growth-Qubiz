@@ -1,7 +1,4 @@
-$dark-mode: #1F2125;
-$light-mode: #f6f7f9;
-$primary-color: #269FEE;
-$secondary-color: #EA6228;
+@import '../../../../styles/colours.scss';
 
 .nav-title {
   display: flex;

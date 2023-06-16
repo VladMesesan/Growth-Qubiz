@@ -1,8 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Diagnostics;
-using static Microsoft.Extensions.Logging.EventSource.LoggingEventSource;
-using System.Reflection.Metadata;
 
 namespace Growth.Controllers.Csharp
 {
