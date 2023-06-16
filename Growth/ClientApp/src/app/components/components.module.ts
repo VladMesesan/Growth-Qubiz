@@ -19,6 +19,8 @@ import { DependencyInjectionComponent } from './dependency-injection/dependency-
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { NameEditorComponent } from './reactive-forms/name-editor/name-editor.component';
 import { ProfileEditorComponent } from './reactive-forms/profile-editor/profile-editor.component';
+import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
+import { NoteCustomComponentComponent } from './lifecycle-hooks/note-custom-component/note-custom-component.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { ProfileEditorComponent } from './reactive-forms/profile-editor/profile-
     DependencyInjectionComponent,
     ReactiveFormsComponent,
     NameEditorComponent,
-    ProfileEditorComponent
+    ProfileEditorComponent,
+    LifecycleHooksComponent,
+    NoteCustomComponentComponent
   ],
   imports: [
     CommonModule,
@@ -52,6 +56,7 @@ import { ProfileEditorComponent } from './reactive-forms/profile-editor/profile-
       { path: 'solid-link', component: SolidComponent },
       { path: 'dep-inj-angular', component: DependencyInjectionComponent },
       { path: 'reactive-forms', component: ReactiveFormsComponent },
+      { path: 'lifecycle-hooks', component: LifecycleHooksComponent },
     ]),
     HttpClientModule,
     FormsModule,

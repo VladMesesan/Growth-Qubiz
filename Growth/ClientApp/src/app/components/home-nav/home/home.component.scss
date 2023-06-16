@@ -1,3 +1,5 @@
+@import '../../../../styles/colours.scss';
+
 .lesson {
   margin: 0;
   width: fit-content;
@@ -6,7 +8,7 @@
 
 .lesson:hover {
   border-radius: 5px;
-  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(38,159,238,0.75) 35%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, var(--primary-color) 35%, var(--secondary-color) 70%, rgba(0,0,0,0) 100%);
 }
 
 // .lesson:hover:after {

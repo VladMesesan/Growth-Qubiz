@@ -1,0 +1,38 @@
+@import '../../../styles/colours.scss';
+
+table {
+  display: block;
+  border: 2px solid;
+  border-radius: 20px;
+}
+
+td {
+  cursor: default;
+  border-radius: 5px;
+  border: 1px solid var(--border-fade);
+  background-color: unset;
+  transition: 0.5s;
+  padding: 6px 12px;
+}
+
+th {
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.hook-name,
+th {
+  font-weight: 700;
+  text-align: center;
+  font-size: 18px;
+}
+
+th:hover {
+  transition: 0.2s;
+  background-color: var(--primary-color);
+}
+
+td:hover {
+  transition: 0.2s;
+  background-color: var(--secondary-color);
+}

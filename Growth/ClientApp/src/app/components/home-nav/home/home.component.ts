@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
         },
         {
           chapter: 'Angular',
-          lessons: [{ name: 'Modules', link: '/home' }, { name: 'Components', link: '/home' }, { name: 'Data-Binding', link: '/home' }, { name: 'Services', link: '/home' }, { name: 'Communication/Interaction between all of the above', link: '/home' }, { name: 'Reactive forms', link: '/reactive-forms' }, { name: 'Angular Lifecycle hooks', link: '/home' }, { name: 'Observables - RxJs', link: '/home' }, { name: 'Unit-Tests', link: '/home' }]
+          lessons: [{ name: 'Modules', link: '/home' }, { name: 'Components', link: '/home' }, { name: 'Data-Binding', link: '/home' }, { name: 'Services', link: '/home' }, { name: 'Communication/Interaction between all of the above', link: '/home' }, { name: 'Reactive forms', link: '/reactive-forms' }, { name: 'Angular Lifecycle hooks', link: '/lifecycle-hooks' }, { name: 'Observables - RxJs', link: '/home' }, { name: 'Unit-Tests', link: '/home' }]
         },
         {
           chapter: 'SQL',
